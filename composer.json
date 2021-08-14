@@ -1,0 +1,32 @@
+{
+    "name": "techno/framework",
+    "homepage": "https://technoframework.com",
+    "type": "library",
+    "license": "unlicense",
+    "require": {
+        "php": "^8.0",
+        "ext-swoole": "^4.5.5"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.15",
+        "captainhook/captainhook": "^5.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Techno\\Framework\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Techno\\Framework\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "vendor/bin/captainhook install -f -s",
+        "test": "./vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
